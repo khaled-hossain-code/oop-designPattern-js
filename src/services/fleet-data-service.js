@@ -16,7 +16,10 @@ export class FleetDataService{
                 case 'car':
                     if(this.validateCarData(vehicle)){
                         let car = this.createCar(vehicle);
-                        this.cars.push(car);
+                        if(car){ //checking the returned value is not null
+                            this.cars.push(car); 
+                        }
+                        
                     }else{
                         let e = new DataError("invalid car data", vehicle);
                         this.errors.push(e);
