@@ -21,6 +21,10 @@ export class FleetDataService{
                     let drone = this.createDrone(vehicle)
                     this.drones.push(drone);
                     break;
+                default:
+                    let e = new DataError("Invalid Vehicle Type", vehicle);
+                    this.errors.push(e);
+                    break;
             }
         }
     }
