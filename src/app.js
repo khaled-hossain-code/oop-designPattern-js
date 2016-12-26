@@ -10,3 +10,6 @@ dataService.loadData(fleet);
 console.log(dataService.cars);
 console.log(dataService.drones);
 console.log(dataService.errors);
+
+let car = dataService.getCarByLicense("AT9900");
+console.log(car);

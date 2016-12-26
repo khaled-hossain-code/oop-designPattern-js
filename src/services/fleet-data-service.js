@@ -10,6 +10,12 @@ export class FleetDataService{
         this.errors = [];
     }
 
+    getCarByLicense(license){
+       return this.cars.find(function(car){
+            return car.license === license;
+        });   
+    }
+
     loadData(fleet){
         for(let vehicle of fleet){
             switch(vehicle.type){
@@ -82,6 +88,5 @@ export class FleetDataService{
         }
         return null;
     }
-
 
 }
